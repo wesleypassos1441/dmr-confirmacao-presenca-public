@@ -1,0 +1,28 @@
+{
+  "name": "@dmr-confirmacao/dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint app src next.config.ts eslint.config.mjs"
+  },
+  "dependencies": {
+    "@dmr-confirmacao/core": "file:../../packages/core",
+    "@supabase/supabase-js": "^2.108.2",
+    "lucide-react": "^1.21.0",
+    "next": "16.3.0-canary.8",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "eslint": "^9.29.0",
+    "eslint-config-next": "^16.2.9",
+    "typescript": "^6.0.3"
+  }
+}

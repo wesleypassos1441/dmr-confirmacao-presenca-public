@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build -w packages/core && npm run build -w apps/dashboard"
+  publish = "apps/dashboard/out"
+
+[build.environment]
+  NODE_VERSION = "24"
+  NETLIFY_NEXT_SKEW_PROTECTION = "true"
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "same-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

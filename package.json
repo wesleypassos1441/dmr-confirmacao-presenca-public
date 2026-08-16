@@ -1,0 +1,34 @@
+{
+  "name": "dmr-confirmacao-presenca",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sistema DMR Confirmacao de Presenca com Supabase, Dashboard e bot WhatsApp local.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w apps/dashboard",
+    "dev:dashboard": "npm run dev -w apps/dashboard",
+    "dev:bot": "npm run dev -w apps/whatsapp-bot",
+    "build": "npm run build -w packages/core && npm run build -w apps/dashboard && npm run build -w apps/whatsapp-bot",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test tests/*.test.mjs",
+    "test:visual": "playwright test",
+    "lint": "npm run lint -w apps/dashboard",
+    "audit:security": "npm audit --audit-level=moderate",
+    "deps:outdated": "npm outdated",
+    "secrets:scan": "node scripts/scan-secrets.mjs",
+    "supabase:migrations": "supabase migration list",
+    "supabase:functions": "supabase functions serve --env-file .env.local"
+  },
+  "overrides": {
+    "postcss": "8.5.10"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.0",
+    "@types/node": "^24.0.0",
+    "supabase": "^2.107.0",
+    "typescript": "^6.0.3"
+  }
+}
